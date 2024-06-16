@@ -66,22 +66,22 @@ buildanduploadbaby()
 
 
 
-echo -n “Do You Want to Download Android Tools? “
+echo -n "Do You Want to Download Android Tools? : "
 read dtools
-if [ $(dtools) == y ]; then
-echo "===================================================="
-echo "Downloading tools.."
-echo "====================================================" 
-fkinfetchtools
+if [ "$dtools" == "y" ]; then
+    echo "===================================================="
+    echo "Downloading tools.."
+    echo "===================================================="
+    fkinfetchtools
 fi
 
-echo -n “Do You Want to Download repo bin? “
+echo -n "Do You Want to Download repo bin? : "
 read repobin
-if [ $(repobin) == y ]; then
-echo "===================================================="
-echo "Downloading repo bin.."
-echo "===================================================="
-fkinfetchrepobin
+if [ "$repobin" == "y" ]; then
+    echo "===================================================="
+    echo "Downloading repo bin.."
+    echo "===================================================="
+    fkinfetchrepobin
 fi
 
 echo "===================================================="
@@ -103,6 +103,6 @@ echo "===================================================="
 echo "Successfully build completed.."
 echo "===================================================="
 
-echo "\n Uploading Build... \n"
-echo "====================================================\n"
+echo -e "\nUploading Build...\n"
+echo "===================================================="
 ksau upload out/target/product/*/CUAOSP**.zip
