@@ -35,7 +35,7 @@ repoinandsink()
     cd $path
     mkdir cuaosp
     cd cuaosp
-    echo -ne '\n' | repo init -u https://github.com/isg32/android_manifest_custom/.git --git-lfs --depth=1
+    echo -ne '\n' | repo init -u https://github.com/isg32/android_manifest_custom/.git -b fifteen-beta --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
     git clone https://github.com/anoosragh69/vendor_priv-keys vendor/priv-keys
 
